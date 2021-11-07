@@ -1,4 +1,4 @@
 RewriteEngine on
 Options -Indexes
 #404 Страница не найдена
-ErrorDocument 404 ./404.html
+ErrorDocument 404 ./docs/errors/404.html
