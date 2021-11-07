@@ -2,3 +2,7 @@ RewriteEngine on
 Options -Indexes
 #404 Страница не найдена
 ErrorDocument 404 ./docs/errors/404.html
+
+<IfModule mod_headers.c>
+  Header always set Permissions-Policy: interest-cohort=()
+</IfModule>
