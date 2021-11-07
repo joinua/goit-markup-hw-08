@@ -1,0 +1,32 @@
+.logo {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  color: $accent-color;
+  margin-right: 93px;
+
+  @media (max-width: 1199px) {
+    margin: 0 auto;
+  }
+
+  &--header {
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 16px;
+      left: 15px;
+    }
+
+    @media (max-width: 1200px) {
+      margin-right: 88px;
+    }
+  }
+}
+
+.logo__label {
+  color: #000000;
+
+  &--footer {
+    color: $contrast-color;
+  }
+}

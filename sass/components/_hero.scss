@@ -1,0 +1,90 @@
+@mixin bg-image($pass1, $pass2) {
+  background: linear-gradient(rgba(128, 131, 165, 0.4), rgba(47, 48, 58, 0.4)),
+    (url($pass1));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background: linear-gradient(rgba(128, 131, 165, 0.4), rgba(47, 48, 58, 0.4)),
+      url($pass2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+  }
+}
+
+.hero {
+  max-width: 1600px;
+  margin: 0 auto;
+
+  text-align: center;
+  letter-spacing: 0.06em;
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+  @include bg-image(
+    "../images/header/header-img-m.jpg",
+    "../images/header/header-img-m@2x.jpg"
+  );
+
+  @media (min-width: 768px) {
+    @include bg-image(
+      "../images/header/header-img-t.jpg",
+      "../images/header/header-img-t@2x.jpg"
+    );
+  }
+
+  @media (min-width: 1200px) {
+    @include bg-image(
+      "../images/header/header-img-c.jpg",
+      "../images/header/header-img-c@2x.jpg"
+    );
+  }
+
+  &__title {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.62;
+    text-transform: uppercase;
+    color: $contrast-color;
+    text-shadow: #000 1px 1px 0, #000 -1px -1px 0, #000 -1px 1px 0,
+      #000 1px -1px 0;
+
+    @media (min-width: 1200px) {
+      max-width: 630px;
+      font-size: 44px;
+      line-height: 1.36;
+    }
+  }
+
+  &__btn {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: inherit;
+    color: $contrast-color;
+    text-shadow: #000 1px 1px 0, #000 -1px -1px 0, #000 -1px 1px 0,
+      #000 1px -1px 0;
+    cursor: pointer;
+    background-color: $accent-color;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 32px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__btn:hover,
+  &__btn:focus {
+    background-color: $hero-button-accent;
+  }
+}

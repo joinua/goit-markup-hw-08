@@ -1,0 +1,37 @@
+.tasks {
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+    max-width: calc((100% - 60px) / 3);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  &__subtext {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgc-above-img;
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    text-transform: uppercase;
+    color: $contrast-color;
+  }
+}

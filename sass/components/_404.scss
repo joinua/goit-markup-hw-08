@@ -1,0 +1,58 @@
+.head404 {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.logo-404 {
+  margin-top: 40px;
+  .link {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: #000000;
+  }
+}
+
+.style-logo-404 {
+  color: #fff;
+}
+
+.content-404 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  width: 588px;
+  margin: 0 auto;
+}
+
+.title-404 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: calc(87 / 72);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  &:hover {
+    color: rgb(246, 250, 37);
+    transition: background 0.5s ease;
+  }
+}
+
+.descr-404 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: calc(38 / 24);
+  text-align: center;
+  color: #ffffff;
+  mix-blend-mode: normal;
+}

@@ -1,0 +1,240 @@
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow-y: scroll;
+
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background-color: $bgc-backdrop;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  max-width: 528px;
+  width: calc(100% - 30px);
+  height: 581px;
+  padding: 38px;
+
+  @media (max-width: 1199px) {
+    max-width: 450px;
+  }
+
+  background-color: $contrast-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  .backdrop.is-hiden & {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+  &__btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $contrast-color;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      border: 1px solid $accent-color;
+      color: $accent-color;
+    }
+  }
+
+  &__icon {
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    color: $second-text-color;
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+
+    margin-bottom: 28px;
+  }
+
+  &__input {
+    padding: 11px 35px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-color;
+    }
+  }
+
+  &__label-name {
+    position: absolute;
+    /* left: 35px; */
+    top: 50%;
+    left: 0;
+    transform: translate(35px, -50%);
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+
+    color: $main-text-color;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .modal__label:focus-within &,
+    .modal__input:not(:placeholder-shown) + & {
+      transform: translate(0, -37px);
+    }
+  }
+
+  &__label-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+
+    .modal__label:focus-within & {
+      fill: $accent-color;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    padding: 12px 16px;
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+
+    color: $main-text-color;
+
+    &::placeholder {
+      font-size: 12px;
+      line-height: 1.17;
+      letter-spacing: 0.01em;
+
+      color: rgba(117, 117, 117, 0.5);
+    }
+  }
+
+  &__textarea-name {
+    position: absolute;
+    left: 0;
+    top: -4px;
+    transform: translateY(-100%);
+
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+
+    color: $main-text-color;
+  }
+
+  &__policy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+  }
+
+  &__check {
+    display: block;
+
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 2px;
+
+    margin-right: 8px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__checkbox:checked + &__check {
+    background-color: $accent-color;
+    border-color: $accent-color;
+  }
+
+  &__policy-text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.71;
+
+    @media (max-width: 1199px) {
+      font-size: 12px;
+      line-height: 1.16;
+    }
+
+    color: $main-text-color;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $accent-color;
+  }
+
+  &__submit-btn {
+    display: block;
+    padding: 10px 55px;
+    margin: 0 auto;
+
+    background-color: $accent-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: $contrast-color;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      background-color: $hero-button-accent;
+    }
+  }
+}

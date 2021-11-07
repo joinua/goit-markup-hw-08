@@ -1,0 +1,10 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: $main-text-color;
+  letter-spacing: 0.03em;
+
+  margin-top: 81px;
+  @media (max-width: 767px) {
+    margin-top: 60px;
+  }
+}
